@@ -18,6 +18,10 @@ using namespace ctre::phoenix::motorcontrol::can;
 /* make some talon  ys for drive train */
 std::string interface = "can0";
 
+void sleepApp(int ms) {
+	std::this_thread::sleep_for(std::chrono::milliseconds(ms));
+}
+
 class Motor {
 TalonSRX* motor;
 
@@ -39,25 +43,54 @@ void setVelocity(double speed) {
 void setPosition(double pos) {
 	motor->Set(ControlMode::Position, pos);
 }
+void enslave(int id) {
+	motor->Set(ControlMode::Follower, id);
+}
 };
 
 class Drive {
 Motor motorLeft{20};
 Motor motorRight{19};
 
-void drive(double leftSpeed, double rightSpeed) {
+void setSpeed(double leftSpeed, double rightSpeed) {
 	motorLeft.setSpeed(leftSpeed);
 	motorRight.setSpeed(rightSpeed);
 }
 };
 
-void sleepApp(int ms) {
-	std::this_thread::sleep_for(std::chrono::milliseconds(ms));
+class Elevator {
+Motor elev{18};
+Motor slaveElev{17};
+Motor intakeMotor{16};
+public: Elevator() {
+	slaveElev.enslave(18);
 }
+void setElevSpeed(double speed) {
+	elev.setSpeed(speed);
+}
+void intake(double speed) {
+	intakeMotor.setSpeed(speed);
+}
+};
+
+class Shooter {
+Motor shooter{15};
+Motor ballPath{14};
+Motor intakeMotor{13};
+void setShooterSpeed(double speed) {
+	shooter.setSpeed(speed);
+}
+void setBallPathSpeed(double speed) {
+	shooter.setSpeed(speed);
+}
+void intake(double speed) {
+	intakeMotor.setSpeed(speed);
+}
+};
 
 int main() {
 	Drive drive;
-	while (true) {
+	while(true) {
 		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
 	}
 }
