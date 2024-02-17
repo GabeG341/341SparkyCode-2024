@@ -70,6 +70,9 @@ public: Elevator() {
 void setElevSpeed(double speed) {
 	elev.setSpeed(speed);
 }
+void setElevPosition(double pos) {
+	elev.setPosition(pos);
+}
 void intake(double speed) {
 	intakeMotor.setSpeed(speed);
 }
@@ -82,6 +85,9 @@ Motor intakeMotor{13};
 void setShooterSpeed(double speed) {
 	shooter.setSpeed(speed);
 }
+void setShooterVelocity(double speed) {
+	shooter.setVelocity(speed);
+}
 void setBallPathSpeed(double speed) {
 	shooter.setSpeed(speed);
 }
@@ -90,15 +96,77 @@ void intake(double speed) {
 }
 };
 
+struct serialInfo {
+	double left;
+	double right;
+	double val1;
+	double val2;
+	double val3;
+};
+
 int main() {
 	serialib arduino;
 	char errorOpening = arduino.openDevice("/dev/ttyACM0", 9600);
 	if(errorOpening!=1) return errorOpening;
 	Drive drive;
-	char fromSerial[15] = "stuff\n";
+	char fromSerial[101] = "stuff\n";
 	while(true) {
-		arduino.readString(fromSerial, '\n', 14, 2000);
-		printf("String read: %s\n", fromSerial);
+		serialInfo values;
+		std::string cereal = "";
+		int t = 0;
+		arduino.readString(fromSerial, '\n', 100, 2000);
+		for(int i = 0; i < 101; i++) {
+			if(fromSerial[i] == '\0') {
+				switch(t) {
+					case 0:
+						values.left = std::stod(cereal);
+						break;
+					case 1:
+						values.right = std::stod(cereal);
+						break;
+					case 2:
+						values.val1 = std::stod(cereal);
+						break;
+					case 3:
+						values.val2 = std::stod(cereal);
+						break;
+					case 4:
+						values.val3 = std::stod(cereal);
+						break;
+				}
+				break;
+			}
+			if(fromSerial[i] != ',') {
+				cereal += fromSerial[i];
+			}
+			else {
+				switch(t) {
+					case 0:
+						values.left = std::stod(cereal);
+						break;
+					case 1:
+						values.right = std::stod(cereal);
+						break;
+					case 2:
+						values.val1 = std::stod(cereal);
+						break;
+					case 3:
+						values.val2 = std::stod(cereal);
+						break;
+					case 4:
+						values.val3 = std::stod(cereal);
+						break;
+				}
+				t++;
+				cereal.clear();
+			}
+		}
+		printf("Left motor: %f\n", values.left);
+		printf("Right motor: %f\n", values.right);
+		printf("Motor value 1: %f\n", values.val1);
+		printf("Motor value 2: %f\n", values.val2);
+		printf("Motor value 3: %f\n", values.val3);
+		//printf("Everything: %s\n", fromSerial);
 		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
 	}
 	arduino.closeDevice();
