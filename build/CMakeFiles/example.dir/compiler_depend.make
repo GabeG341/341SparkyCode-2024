@@ -429,8 +429,88 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
   /usr/include/SDL2/SDL_timer.h \
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
-  /usr/include/SDL2/SDL_misc.h
+  /usr/include/SDL2/SDL_misc.h \
+  /home/daisy/Phoenix-Linux-SocketCAN-Example/serialib/lib/serialib.cpp \
+  /home/daisy/Phoenix-Linux-SocketCAN-Example/serialib/lib/serialib.h \
+  /usr/include/arm-linux-gnueabihf/sys/shm.h \
+  /usr/include/arm-linux-gnueabihf/sys/ipc.h \
+  /usr/include/arm-linux-gnueabihf/bits/ipctypes.h \
+  /usr/include/arm-linux-gnueabihf/bits/ipc.h \
+  /usr/include/arm-linux-gnueabihf/bits/ipc-perm.h \
+  /usr/include/arm-linux-gnueabihf/bits/shm.h \
+  /usr/include/arm-linux-gnueabihf/bits/shmlba.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_shmid_ds.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_shmid64_ds.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_shmid64_ds_helper.h \
+  /usr/include/termios.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-struct.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-c_cc.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-c_iflag.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-c_oflag.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-baud.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-c_cflag.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-c_lflag.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-tcflow.h \
+  /usr/include/arm-linux-gnueabihf/bits/termios-misc.h \
+  /usr/include/arm-linux-gnueabihf/sys/ttydefaults.h \
+  /usr/include/arm-linux-gnueabihf/sys/time.h \
+  /usr/include/fcntl.h \
+  /usr/include/arm-linux-gnueabihf/bits/fcntl.h \
+  /usr/include/arm-linux-gnueabihf/bits/fcntl-linux.h \
+  /usr/include/arm-linux-gnueabihf/bits/types/struct_iovec.h \
+  /usr/include/linux/falloc.h \
+  /usr/include/arm-linux-gnueabihf/bits/stat.h \
+  /usr/include/arm-linux-gnueabihf/bits/struct_stat.h \
+  /usr/include/arm-linux-gnueabihf/sys/ioctl.h \
+  /usr/include/arm-linux-gnueabihf/bits/ioctls.h \
+  /usr/include/arm-linux-gnueabihf/asm/ioctls.h \
+  /usr/include/asm-generic/ioctls.h \
+  /usr/include/linux/ioctl.h \
+  /usr/include/arm-linux-gnueabihf/asm/ioctl.h \
+  /usr/include/asm-generic/ioctl.h \
+  /usr/include/arm-linux-gnueabihf/bits/ioctl-types.h
 
+
+/usr/include/arm-linux-gnueabihf/bits/ioctl-types.h:
+
+/usr/include/asm-generic/ioctl.h:
+
+/usr/include/arm-linux-gnueabihf/asm/ioctl.h:
+
+/usr/include/arm-linux-gnueabihf/asm/ioctls.h:
+
+/usr/include/arm-linux-gnueabihf/bits/ioctls.h:
+
+/usr/include/linux/falloc.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/struct_iovec.h:
+
+/usr/include/arm-linux-gnueabihf/sys/ttydefaults.h:
+
+/usr/include/arm-linux-gnueabihf/bits/termios-c_cflag.h:
+
+/usr/include/arm-linux-gnueabihf/bits/termios-baud.h:
+
+/usr/include/arm-linux-gnueabihf/bits/termios-struct.h:
+
+/usr/include/arm-linux-gnueabihf/bits/termios.h:
+
+/usr/include/termios.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/struct_shmid64_ds.h:
+
+/usr/include/arm-linux-gnueabihf/bits/types/struct_shmid_ds.h:
+
+/usr/include/arm-linux-gnueabihf/bits/shm.h:
+
+/usr/include/arm-linux-gnueabihf/bits/ipc-perm.h:
+
+/usr/include/arm-linux-gnueabihf/sys/ipc.h:
+
+/home/daisy/Phoenix-Linux-SocketCAN-Example/serialib/lib/serialib.h:
+
+/home/daisy/Phoenix-Linux-SocketCAN-Example/serialib/lib/serialib.cpp:
 
 /usr/include/SDL2/SDL_loadso.h:
 
@@ -445,6 +525,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 /usr/include/SDL2/SDL_gamecontroller.h:
 
 /usr/include/SDL2/SDL_guid.h:
+
+/usr/include/asm-generic/ioctls.h:
 
 /usr/include/SDL2/SDL_keycode.h:
 
@@ -462,11 +544,15 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/SDL2/SDL_error.h:
 
+/usr/include/arm-linux-gnueabihf/bits/termios-tcflow.h:
+
 /usr/include/SDL2/SDL_system.h:
 
 /usr/include/SDL2/SDL_audio.h:
 
 /usr/include/SDL2/SDL_atomic.h:
+
+/usr/include/arm-linux-gnueabihf/bits/struct_stat.h:
 
 /usr/include/arm-linux-gnueabihf/bits/signal_ext.h:
 
@@ -526,6 +612,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/SDL2/SDL.h:
 
+/usr/include/arm-linux-gnueabihf/bits/termios-c_cc.h:
+
 /usr/include/linux/close_range.h:
 
 /usr/include/arm-linux-gnueabihf/bits/getopt_core.h:
@@ -539,6 +627,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 /usr/include/c++/12/thread:
 
 /usr/include/c++/12/bits/parse_numbers.h:
+
+/usr/include/arm-linux-gnueabihf/bits/shmlba.h:
 
 /usr/include/SDL2/SDL_haptic.h:
 
@@ -616,6 +706,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/arm-linux-gnueabihf/bits/types/__fpos_t.h:
 
+/usr/include/arm-linux-gnueabihf/bits/types/struct_shmid64_ds_helper.h:
+
 /usr/include/SDL2/SDL_video.h:
 
 /usr/include/c++/12/cstdio:
@@ -664,6 +756,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/c++/12/bits/refwrap.h:
 
+/usr/include/arm-linux-gnueabihf/bits/termios-c_lflag.h:
+
 /usr/include/arm-linux-gnueabihf/bits/struct_mutex.h:
 
 /usr/include/arm-linux-gnueabihf/bits/fp-fast.h:
@@ -681,6 +775,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 /usr/include/endian.h:
 
 /usr/include/c++/12/bits/ptr_traits.h:
+
+/usr/include/arm-linux-gnueabihf/sys/time.h:
 
 /usr/include/SDL2/SDL_main.h:
 
@@ -764,6 +860,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/c++/12/bits/nested_exception.h:
 
+/usr/include/arm-linux-gnueabihf/bits/termios-misc.h:
+
 /usr/include/c++/12/bits/stl_pair.h:
 
 /usr/include/c++/12/map:
@@ -844,6 +942,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/arm-linux-gnueabihf/bits/types/locale_t.h:
 
+/usr/include/arm-linux-gnueabihf/bits/termios-c_iflag.h:
+
 /usr/include/c++/12/ext/type_traits.h:
 
 /usr/include/c++/12/bits/char_traits.h:
@@ -889,6 +989,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 /usr/include/c++/12/debug/assertions.h:
 
 /usr/include/c++/12/bits/ostream.tcc:
+
+/usr/include/arm-linux-gnueabihf/bits/fcntl.h:
 
 /usr/include/c++/12/bits/memoryfwd.h:
 
@@ -992,6 +1094,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/motorcontrol/can/BaseMotorController.h:
 
+/usr/include/arm-linux-gnueabihf/sys/ioctl.h:
+
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/motorcontrol/NeutralMode.h:
 
 /usr/include/SDL2/SDL_stdinc.h:
@@ -1013,6 +1117,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 /usr/include/SDL2/SDL_metal.h:
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/StatusCodes.h:
+
+/usr/include/fcntl.h:
 
 /usr/include/c++/12/bits/exception_defines.h:
 
@@ -1058,6 +1164,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/arm-linux-gnueabihf/bits/types/error_t.h:
 
+/usr/include/arm-linux-gnueabihf/bits/stat.h:
+
 /usr/include/c++/12/bits/charconv.h:
 
 /usr/include/c++/12/bits/uses_allocator.h:
@@ -1089,6 +1197,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 /usr/include/SDL2/begin_code.h:
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/export.h:
+
+/usr/include/linux/ioctl.h:
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/cci/Platform_CCI.h:
 
@@ -1148,6 +1258,8 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/cci/BuffTrajPointStream_CCI.h:
 
+/usr/include/arm-linux-gnueabihf/bits/ipc.h:
+
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/motion/SetValueMotionProfile.h:
 
 /usr/include/arm-linux-gnueabihf/bits/signum-arch.h:
@@ -1172,11 +1284,15 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/motorcontrol/InvertType.h:
 
+/usr/include/arm-linux-gnueabihf/bits/termios-c_oflag.h:
+
 /usr/include/arm-linux-gnueabihf/bits/math-vector.h:
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/example.cpp:
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/motorcontrol/RemoteSensorSource.h:
+
+/usr/include/arm-linux-gnueabihf/bits/ipctypes.h:
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/motorcontrol/SensorTerm.h:
 
@@ -1228,11 +1344,15 @@ CMakeFiles/example.dir/example.cpp.o: /home/daisy/Phoenix-Linux-SocketCAN-Exampl
 
 /usr/include/arm-linux-gnueabihf/bits/time.h:
 
+/usr/include/arm-linux-gnueabihf/sys/shm.h:
+
 /usr/include/SDL2/SDL_joystick.h:
 
 /home/daisy/Phoenix-Linux-SocketCAN-Example/include/ctre/phoenix/sensors/PigeonIMU_Faults.h:
 
 /usr/include/arm-linux-gnueabihf/bits/timex.h:
+
+/usr/include/arm-linux-gnueabihf/bits/fcntl-linux.h:
 
 /usr/include/SDL2/SDL_pixels.h:
 

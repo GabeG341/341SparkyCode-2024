@@ -8,12 +8,14 @@
 #include <thread>
 #include <unistd.h>
 #include <SDL2/SDL.h>
-//#include "serial/serial.sh"
+#include <stdio.h>
+#include "serialib/lib/serialib.cpp"
 
 using namespace ctre::phoenix;
 using namespace ctre::phoenix::platform;
 using namespace ctre::phoenix::motorcontrol;
 using namespace ctre::phoenix::motorcontrol::can;
+
 
 /* make some talon  ys for drive train */
 std::string interface = "can0";
@@ -89,8 +91,15 @@ void intake(double speed) {
 };
 
 int main() {
+	serialib arduino;
+	char errorOpening = arduino.openDevice("/dev/ttyACM0", 9600);
+	if(errorOpening!=1) return errorOpening;
 	Drive drive;
+	char fromSerial[15] = "stuff\n";
 	while(true) {
+		arduino.readString(fromSerial, '\n', 14, 2000);
+		printf("String read: %s\n", fromSerial);
 		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
 	}
+	arduino.closeDevice();
 }
