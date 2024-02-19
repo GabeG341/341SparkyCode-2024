@@ -24,6 +24,14 @@ void sleepApp(int ms) {
 	std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }
 
+struct serialInfo {
+	double left;
+	double right;
+	double val1;
+	double val2;
+	double val3;
+};
+
 class Motor {
 TalonSRX* motor;
 
@@ -54,7 +62,7 @@ class Drive {
 Motor motorLeft{20};
 Motor motorRight{19};
 
-void setSpeed(double leftSpeed, double rightSpeed) {
+public: void setSpeed(double leftSpeed, double rightSpeed) {
 	motorLeft.setSpeed(leftSpeed);
 	motorRight.setSpeed(rightSpeed);
 }
@@ -64,10 +72,20 @@ class Elevator {
 Motor elev{18};
 Motor slaveElev{17};
 Motor intakeMotor{16};
+
 public: Elevator() {
 	slaveElev.enslave(18);
 }
-void setElevSpeed(double speed) {
+void update(double val1, double val2, double val3) {
+	if(val1 == 1) {
+		setElevSpeed(val2);
+	}
+	else {
+		setElevPosition(val2);
+	}
+	intake(val3);
+}
+private: void setElevSpeed(double speed) {
 	elev.setSpeed(speed);
 }
 void setElevPosition(double pos) {
@@ -82,7 +100,13 @@ class Shooter {
 Motor shooter{15};
 Motor ballPath{14};
 Motor intakeMotor{13};
-void setShooterSpeed(double speed) {
+
+public: void update(double val1, double val2, double val3) {
+	setShooterVelocity(val1);
+	setBallPathSpeed(val2);
+	intake(val3);
+}
+private: void setShooterSpeed(double speed) {
 	shooter.setSpeed(speed);
 }
 void setShooterVelocity(double speed) {
@@ -96,19 +120,31 @@ void intake(double speed) {
 }
 };
 
-struct serialInfo {
-	double left;
-	double right;
-	double val1;
-	double val2;
-	double val3;
+class Robot {
+Drive drive;
+Elevator elevator;
+Shooter shooter;
+int t;
+
+public: Robot(int type) {
+	t = type;
+}
+void update(serialInfo values) {
+	drive.setSpeed(values.left, values.right);
+	if(t == 1) {
+		elevator.update(values.val1, values.val2, values.val3);
+	}
+	else {
+		shooter.update(values.val1, values.val2, values.val3);
+	}
+}
 };
 
 int main() {
 	serialib arduino;
 	char errorOpening = arduino.openDevice("/dev/ttyACM0", 9600);
 	if(errorOpening!=1) return errorOpening;
-	Drive drive;
+	Robot robot(1);
 	char fromSerial[101] = "stuff\n";
 	while(true) {
 		serialInfo values;
@@ -168,6 +204,7 @@ int main() {
 		printf("Motor value 3: %f\n", values.val3);
 		//printf("Everything: %s\n", fromSerial);
 		ctre::phoenix::unmanaged::Unmanaged::FeedEnable(100);
+		robot.update(values);
 	}
 	arduino.closeDevice();
 }
